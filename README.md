@@ -18,25 +18,25 @@
 Крок 2 Розшир функціонал застосунку таким чином, щоб в інтерфейсі відображалося
 більше статистики про зібрані відгуки. Додай відображення загальної кількості
 зібраних відгуків з усіх категорій та відсоток позитивних відгуків. Для цього
-створи допоміжні методи countTotalFeedback() і
-countPositiveFeedbackPercentage(), які підраховують ці значення, ґрунтуючись на
-даних у стані (обчислювані дані).
+створи допоміжні методи `countTotalFeedback()` і
+`countPositiveFeedbackPercentage()`, які підраховують ці значення, ґрунтуючись
+на даних у стані (обчислювані дані).
 
 ![alt text](https://textbook.edu.goit.global/lms-react-homework/v1/uk/img/hw-02/feedback/step-2.png)
 
 Крок 3 Виконай рефакторинг застосунку. Стан застосунку повинен залишатися у
-кореневому компоненті <App>.
+кореневому компоненті `<App>`.
 
 Винеси відображення статистики в окремий компонент
-<Statistics good={} neutral={} bad={} total={} positivePercentage={}>. Винеси
-блок кнопок в компонент <FeedbackOptions options={} onLeaveFeedback={}>. Створи
-компонент <Section title="">, який рендерить секцію із заголовком і дітей
-(children). Обгорни кожен із <Statistics> і <FeedbackOptions> у створений
-компонент секції.
+`<Statistics good={} neutral={} bad={} total={} positivePercentage={}>`. Винеси
+блок кнопок в компонент `<FeedbackOptions options={} onLeaveFeedback={}>`.
+Створи компонент `<Section title="">`, який рендерить секцію із заголовком і
+дітей (children). Обгорни кожен із `<Statistics>` і `<FeedbackOptions>` у
+створений компонент секції.
 
 Крок 4 Розшир функціонал застосунку таким чином, щоб блок статистики рендерився
 тільки після того, як було зібрано хоча б один відгук. Повідомлення про
 відсутність статистики винеси в компонент
-<Notification message="There is no feedback">.
+`<Notification message="There is no feedback">`.
 
 ![alt text](https://textbook.edu.goit.global/lms-react-homework/v1/uk/img/hw-02/feedback/preview.gif)
