@@ -40,3 +40,4 @@ https://textbook.edu.goit.global/lms-react-homework/v1/uk/img/hw-02/feedback/ste
 <Notification message="There is no feedback">.
 
 https://textbook.edu.goit.global/lms-react-homework/v1/uk/img/hw-02/feedback/preview.gif
+image.png
