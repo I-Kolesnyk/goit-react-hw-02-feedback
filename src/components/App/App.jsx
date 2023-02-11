@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Section from 'components/Section';
 import FeedbackOptions from 'components/FeedbackOptions';
 import Statistics from 'components/Statistics';
-import Notification from 'components/Notification';
+import NotificationMessage from 'components/Notification';
 
 class App extends Component {
   state = {
@@ -22,37 +22,33 @@ class App extends Component {
   };
 
   countPositiveFeedbackPercentage = () => {
-    const { good } = this.state;
-    const total = this.countTotalFeedback();
-    return Math.round((good * 100) / total);
+    // const { good } = this.state;
+    // const total = this.countTotalFeedback();
+    return Math.round((this.state.good * 100) / this.countTotalFeedback());
   };
 
   render() {
-    const {
-      onLeaveFeedback,
-      countTotalFeedback,
-      countFeedbackPercentage,
-      state,
-    } = this;
+    const { good, neutral, bad } = this.state;
+
     return (
       <>
-        <h1>React-HW02_01 @nickgric</h1>
-        <Section title="Please leave (positive) feedback">
+        <Section title="Please leave feedback">
           <FeedbackOptions
-            options={Object.keys(state)}
-            onLeaveFeedback={onLeaveFeedback}
+            options={Object.keys(this.state)}
+            onLeaveFeedback={this.onLeaveFeedback}
           />
         </Section>
         <Section title="Statistics">
-          {countTotalFeedback() !== 0 && (
+          {this.countTotalFeedback() !== 0 ? (
             <Statistics
-              options={state}
-              total={countTotalFeedback()}
-              feedbackPercentage={countFeedbackPercentage()}
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={this.countTotalFeedback()}
+              positivePercentage={this.countPositiveFeedbackPercentage()}
             />
-          )}
-          {countTotalFeedback() === 0 && (
-            <Notification message="There is no feedback" />
+          ) : (
+            <NotificationMessage message="There is no feedback" />
           )}
         </Section>
       </>
