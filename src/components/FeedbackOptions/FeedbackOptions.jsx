@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
-import { Button, ButtonContainer } from './FeedbackOptions.styled';
+import Button from 'components/Button';
+import { ButtonContainer } from './FeedbackOptions.styled';
 
 function FeedbackOptions({ options, onLeaveFeedback }) {
   return (
@@ -7,12 +8,9 @@ function FeedbackOptions({ options, onLeaveFeedback }) {
       {options.map(option => (
         <Button
           key={option}
-          id={option}
-          type="button"
-          onClick={() => onLeaveFeedback(option)}
-        >
-          {option}
-        </Button>
+          option={option}
+          onLeaveFeedback={() => onLeaveFeedback(option)}
+        />
       ))}
     </ButtonContainer>
   );

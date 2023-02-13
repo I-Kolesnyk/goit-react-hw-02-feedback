@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
+import { MessageText } from './Notification.styled';
 
 function NotificationMessage({ message }) {
-  return <>{message && <p>{message}</p>}</>;
+  return <>{message && <MessageText>{message}</MessageText>}</>;
 }
 
 NotificationMessage.propTypes = {
